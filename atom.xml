@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-26T08:28:33.852Z</updated>
+  <updated>2021-08-31T01:04:56.067Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初学机器学习</title>
+    <link href="http://example.com/2021/08/30/%E5%88%9D%E5%AD%A6%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://example.com/2021/08/30/%E5%88%9D%E5%AD%A6%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
+    <published>2021-08-30T09:28:02.000Z</published>
+    <updated>2021-08-31T01:04:56.067Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚接触机器学习发现有些东西没想象中的那么难，当然也不简单</p><span id="more"></span><h2 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h2><p>机器学习可以看作是一种函数，输入可以是一个图片，也可以是一段文字</p><h3 id="不同类型的机器学习函数"><a href="#不同类型的机器学习函数" class="headerlink" title="不同类型的机器学习函数"></a>不同类型的机器学习函数</h3><p>机器学习函数主要分为三大块</p><ol><li>回归函数：函数输出一个标量</li><li>分类函数：给定一些选项，函数输出正确的一个</li><li>结构化学习函数：不但要输出一个数字，还要返回一个结构化的东西，如图片、文档</li></ol><h3 id="机器学习的过程"><a href="#机器学习的过程" class="headerlink" title="机器学习的过程"></a>机器学习的过程</h3><p>大致分为三个步骤</p><ol><li>一个带有未知参数的函数:y=b+w${x_1}$</li></ol><ul><li>y(model):第二天的预测值</li><li>$x_1$:前一天的输入值</li><li>w(weight)和b(bias)是未知参数（从数据中学习得来）</li></ul><ol start="2"><li>从训练数据中定义Loss</li></ol><ul><li>Losss是一个带参数的函数:L(b,w),实际上就是判读1中选取的参数好不好</li><li>Loss=$\frac {1} {N} \sum{_n}e_n$,(e可以用误差的绝对值(MAE)，也可以用误差的平方(MSE),如果y和y^都是几率分布，那么e也可以用交叉熵(Cross-entropy)，自己决定)</li><li>Loss的等高线图叫误差曲线（error surface）</li></ul><ol start="3"><li>最佳化问题（Optimization）</li></ol><ul><li>找一组w、b使得Loss最小</li><li>梯度下降(Gradient Descent)：<ol><li>随机选择一个从初始的$w_0$,$b_0$。</li><li>计算出L-W曲线在$w_0$,$b_0$上的斜率（微分），微分的正负代表移动的方向，为负增大，为正减小。<br><img src="https://img-blog.csdnimg.cn/dc623d61374e4db59763f318d7c00c79.png#pic_center" alt="在这里插入图片描述"></li><li>$\eta$表示学习率,<img src="https://img-blog.csdnimg.cn/8baaadb131ae4c1593b0263966e75896.png" alt="在这里插入图片描述"></li><li>更新w和b,当学习次数达到时会停下来或者当斜率(微分)等于0时停下来。但当w，b停下来时可能只是达到了局部最小的Loss(Local minima)，而不是全局最小的Loss(global minima)</li></ol></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;刚接触机器学习发现有些东西没想象中的那么难，当然也不简单&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>外地上学感悟</title>
