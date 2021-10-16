@@ -22,20 +22,35 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="关于搭建这个博客">
+  <meta name="description" content="Self-Attention ConvLSTM for Spatiotemporal Prediction">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
-<meta property="og:url" content="http://example.com/2021/08/03/welcome-to-hexo/index.html">
+<meta property="og:title" content="论文2">
+<meta property="og:url" content="http://example.com/2021/10/16/%E8%AE%BA%E6%96%872/index.html">
 <meta property="og:site_name" content="DJH&#39;s Blog">
-<meta property="og:description" content="关于搭建这个博客">
+<meta property="og:description" content="Self-Attention ConvLSTM for Spatiotemporal Prediction">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-03T03:55:48.000Z">
-<meta property="article:modified_time" content="2021-08-31T01:12:41.123Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2dcddb902fca416e9e8093dd2d104f88.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/120ec832b35243c0a93d9d2af1023c82.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ee02a7eff075478a83a4795a4149682a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c6f946941b654bf182956b6db720125e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_9,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e8049f8595834b97a21a11f34e226c79.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8c01d7f332b0499dbbf1607e73aa03d9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_12,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9d819337b2664982b874b412b9139071.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bc271f7c783541fca3e19fb2c028231d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2578831f2fea47138514022d16cf89df.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_14,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/dc05035ea76f49c6a400104e3b8e9348.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/18e73b883ff54941b179b3ee951918f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/62833cb433244093b9598e873e9006f2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2021-10-16T01:44:33.000Z">
+<meta property="article:modified_time" content="2021-10-16T01:46:58.342Z">
 <meta property="article:author" content="DJH">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="ConvLSTM">
+<meta property="article:tag" content="时空预测">
+<meta property="article:tag" content="Self-Attention">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2dcddb902fca416e9e8093dd2d104f88.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,,t_70,g_se,x_16">
 
-<link rel="canonical" href="http://example.com/2021/08/03/welcome-to-hexo/">
+<link rel="canonical" href="http://example.com/2021/10/16/%E8%AE%BA%E6%96%872/">
 
 
 <script id="page-configurations">
@@ -48,7 +63,7 @@
   };
 </script>
 
-  <title>第一篇博客 | DJH's Blog</title>
+  <title>论文2 | DJH's Blog</title>
   
 
 
@@ -206,7 +221,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/03/welcome-to-hexo/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/16/%E8%AE%BA%E6%96%872/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%9D%9A%E6%9E%9C%E5%A2%99.jpg">
@@ -219,7 +234,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第一篇博客
+          论文2
         </h1>
 
         <div class="post-meta">
@@ -229,11 +244,11 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-03 11:55:48" itemprop="dateCreated datePublished" datetime="2021-08-03T11:55:48+08:00">2021-08-03</time>
+              <time title="创建时间：2021-10-16 09:44:33" itemprop="dateCreated datePublished" datetime="2021-10-16T09:44:33+08:00">2021-10-16</time>
             </span>
 
           
-            <span id="/2021/08/03/welcome-to-hexo/" class="post-meta-item leancloud_visitors" data-flag-title="第一篇博客" title="阅读次数">
+            <span id="/2021/10/16/%E8%AE%BA%E6%96%872/" class="post-meta-item leancloud_visitors" data-flag-title="论文2" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -248,8 +263,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/08/03/welcome-to-hexo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/03/welcome-to-hexo/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/10/16/%E8%AE%BA%E6%96%872/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/10/16/%E8%AE%BA%E6%96%872/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -259,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>119</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -268,7 +283,7 @@
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">关于搭建这个博客</div>
+            <div class="post-description">Self-Attention ConvLSTM for Spatiotemporal Prediction</div>
 
         </div>
       </header>
@@ -279,7 +294,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="这是我在hexo写的第一篇博客"><a href="#这是我在hexo写的第一篇博客" class="headerlink" title="这是我在hexo写的第一篇博客"></a>这是我在hexo写的第一篇博客</h1><p>最近突然就想着搭建一个属于自己的博客，想要一个自己的小天地用来记录自己的研究生生活。<br>这个博客是用hexo+next来搭建完成的，很喜欢这种简约的风格。我是参作<a target="_blank" rel="noopener" href="http://yearito.cn/">yearito</a>来搭建的，基本上可以说是他的复制了。</p>
+        <h1 id="论文：Self-Attention-ConvLSTM-for-Spatiotemporal-Prediction"><a href="#论文：Self-Attention-ConvLSTM-for-Spatiotemporal-Prediction" class="headerlink" title="论文：Self-Attention ConvLSTM for Spatiotemporal Prediction"></a>论文：Self-Attention ConvLSTM for Spatiotemporal Prediction</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h2><p>   ConvLSTM在时空预测方面取得了不错的成绩，但通过堆叠的卷积层来捕获远程空间依赖性，有效的感受野远小于理论感受野。现有的改进方法TraiGRU工作方式类似于可变形卷积，学习到的偏移量仅提供了稀疏的空间依赖性。因此对于长距离的空间依赖的捕捉仍然是个问题<br>   而自注意力模块能够在单个网络层获取全局的空间上下文，所以本文引入了额外的记忆单元 M， 并且M可以通过门控机制来捕捉时间上长期的特征依赖。<br><strong>主要贡献</strong></p>
+<p> 1.提出了一种新的ConvLSTM变体，称为SA-ConvLSTM，可以成功捕获长期的空间依赖性。<br> 2.设计了一个基于记忆的自我注意模块（memory-based self-attention module, SAM），以在预测过程中记忆全局时空依赖性。<br> 3.在MovingMNIST和KTH数据集上进行多帧预测，使用TexiBJ数据集进行交通流预测，以更少的参数和更高的效率在所有数据集中获得最佳结果。</p>
+<h2 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2.Methods"></a>2.Methods</h2><h3 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h3><p><img src="https://img-blog.csdnimg.cn/2dcddb902fca416e9e8093dd2d104f88.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,,t_70,g_se,x_16" alt="在这里插入图片描述"><br>$$H_t为当前时间步的特征图。query:Q_c=W_qH_t，key:K_h=W_kH_t，value:V_h=W_vH_t。$$<br>$$其中W_q,W_k,W_v都是1<em>1的卷积核，设原数据为C</em>H<em>W,C为通道数，则H_t为C</em>N，其中N=H*W。$$<br><strong>相似度得分计算公式:</strong><br>$$e=Q_h^TK_h∈R^{N×N}$$<br><strong>归一化：</strong><br>$$a_{i,j}=\frac{exp (e_{i,j})}{\sum^N_{k=1} exp(e_{i,k})} ,i,j∈{1,2,3…N}$$<br><strong>第i个位置的汇总特征是使用所有位置的加权总和来计算的：</strong><br>$$Z_i=\sum^N_{j=i}a_{i,j}(W_vH_{t;j})$$</p>
+<h3 id="Self-Attention-Memory-Module"><a href="#Self-Attention-Memory-Module" class="headerlink" title="Self-Attention Memory Module"></a>Self-Attention Memory Module</h3><p><img src="https://img-blog.csdnimg.cn/120ec832b35243c0a93d9d2af1023c82.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>通过对Self-Attention基础模型加以改进，以捕捉时间和空间上的全局特征依赖，提出了Self-Attention Memory(SAM)模块，结构如上图所示。SAM模块接受两个输入：当前时间步的输入特征$H_t$和上一个时间步的记忆单元$M_{t-1}$,结构可分为三个部分：用以获取全局上下文信息的特征聚合(Feature Aggregation),以及记忆更新（Memory Updating）和输出（Output）。</p>
+<p><strong>Feature Aggregation</strong><br><img src="https://img-blog.csdnimg.cn/ee02a7eff075478a83a4795a4149682a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>通过两个Attention将当前时间步的输入特征$H_t$和上个时间步的记忆单元$M_{t-1}$，分别映射为$Z_h$和$Z_m$然后进行concat，经过1*1卷积得到后面的Z。</p>
+<p><strong>Memory Updating</strong><br><img src="https://img-blog.csdnimg.cn/c6f946941b654bf182956b6db720125e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_9,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>作者使用门控机制自适应的更新记忆单元M，聚合特征Z与$H_t$堆叠并经过一维卷积来计算更新门$i’_t$与更新值$g’_t$，遗忘门为$1-i’_t$<br><img src="https://img-blog.csdnimg.cn/e8049f8595834b97a21a11f34e226c79.png" alt="在这里插入图片描述"><br><strong>Output</strong><br><img src="https://img-blog.csdnimg.cn/8c01d7f332b0499dbbf1607e73aa03d9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_12,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p>最后，SAM通过更新后的记忆单元$M_{t-1}$与输出门$o’_t$按元素相乘得到最后的输出：</p>
+<p><img src="https://img-blog.csdnimg.cn/9d819337b2664982b874b412b9139071.png" alt="在这里插入图片描述"></p>
+<h3 id="Self-Attention-ConvLSTM"><a href="#Self-Attention-ConvLSTM" class="headerlink" title="Self-Attention ConvLSTM"></a>Self-Attention ConvLSTM</h3><p><img src="https://img-blog.csdnimg.cn/bc271f7c783541fca3e19fb2c028231d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>将SAM模块嵌入到ConvLSTM中就得到了论文中所使用的SA-ConvLSTM<img src="https://img-blog.csdnimg.cn/2578831f2fea47138514022d16cf89df.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><h3 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a>消融实验</h3><p><img src="https://img-blog.csdnimg.cn/dc05035ea76f49c6a400104e3b8e9348.png" alt="在这里插入图片描述"></p>
+<h3 id="对比实验"><a href="#对比实验" class="headerlink" title="对比实验"></a>对比实验</h3><p><img src="https://img-blog.csdnimg.cn/18e73b883ff54941b179b3ee951918f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/62833cb433244093b9598e873e9006f2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 
     </div>
 
@@ -330,7 +356,7 @@
   <!-- 本文标题 -->
   <li>
     <strong>本文标题： </strong>
-    第一篇博客
+    论文2
   </li>
 
   <!-- 本文作者 -->
@@ -342,26 +368,26 @@
   <!-- 创建时间 -->
   <li>
     <strong>创建时间： </strong>
-    2021年08月03日 - 11时08分
+    2021年10月16日 - 09时10分
   </li>
 
   <!-- 修改时间 -->
   <li>
     <strong>修改时间： </strong>
-    2021年08月31日 - 09时08分
+    2021年10月16日 - 09时10分
   </li>
 
   <!-- 引用链接 -->
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2021/08/03/welcome-to-hexo/" title="第一篇博客"
-      >http://example.com/2021/08/03/welcome-to-hexo/</a
+    <a href="http://example.com/2021/10/16/%E8%AE%BA%E6%96%872/" title="论文2"
+      >http://example.com/2021/10/16/%E8%AE%BA%E6%96%872/</a
     >
     <span class="copy-path" title="点击复制引用链接"
       ><i
         style="cursor: pointer"
         class="fa fa-clipboard"
-        data-clipboard-text="[DJH's Blog | 第一篇博客](http://example.com/2021/08/03/welcome-to-hexo/)"
+        data-clipboard-text="[DJH's Blog | 论文2](http://example.com/2021/10/16/%E8%AE%BA%E6%96%872/)"
         aria-label="复制成功"
       ></i
     ></span>
@@ -396,7 +422,9 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/ConvLSTM/" rel="tag"><i class="fa fa-tag"></i> ConvLSTM</a>
+              <a href="/tags/%E6%97%B6%E7%A9%BA%E9%A2%84%E6%B5%8B/" rel="tag"><i class="fa fa-tag"></i> 时空预测</a>
+              <a href="/tags/Self-Attention/" rel="tag"><i class="fa fa-tag"></i> Self-Attention</a>
           </div>
 
         
@@ -404,10 +432,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/08/24/%E5%A4%96%E5%9C%B0%E4%B8%8A%E5%AD%A6%E6%84%9F%E6%82%9F/" rel="next" title="外地上学感悟">
-      外地上学感悟 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/09/04/Pandas%E4%BD%BF%E7%94%A8%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="Pandas使用遇到的问题">
+      <i class="fa fa-chevron-left"></i> Pandas使用遇到的问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/16/%E8%AE%BA%E6%96%871/" rel="next" title="论文1">
+      论文1 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -468,7 +499,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E6%88%91%E5%9C%A8hexo%E5%86%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2"><span class="nav-text">这是我在hexo写的第一篇博客</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%EF%BC%9ASelf-Attention-ConvLSTM-for-Spatiotemporal-Prediction"><span class="nav-text">论文：Self-Attention ConvLSTM for Spatiotemporal Prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Introduction"><span class="nav-text">1.Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Methods"><span class="nav-text">2.Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-Attention"><span class="nav-text">Self-Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-Attention-Memory-Module"><span class="nav-text">Self-Attention Memory Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-Attention-ConvLSTM"><span class="nav-text">Self-Attention ConvLSTM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E8%9E%8D%E5%AE%9E%E9%AA%8C"><span class="nav-text">消融实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E5%AE%9E%E9%AA%8C"><span class="nav-text">对比实验</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -609,6 +640,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

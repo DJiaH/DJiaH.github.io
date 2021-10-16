@@ -30,7 +30,7 @@
 <meta property="og:description" content="pandas和dataframe遇到的问题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-04T01:55:59.000Z">
-<meta property="article:modified_time" content="2021-10-04T07:54:19.636Z">
+<meta property="article:modified_time" content="2021-10-04T08:02:49.581Z">
 <meta property="article:author" content="DJH">
 <meta property="article:tag" content="数据操作">
 <meta name="twitter:card" content="summary">
@@ -279,46 +279,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="2121-9-3"><a href="#2121-9-3" class="headerlink" title="2121.9.3"></a>2121.9.3</h1><h4 id="note1"><a href="#note1" class="headerlink" title="note1"></a>note1</h4><p>合并数据，concat和merge</p>
+        <h1 id="2121-9-3"><a href="#2121-9-3" class="headerlink" title="2121.9.3"></a>2121.9.3</h1><h2 id="note1"><a href="#note1" class="headerlink" title="note1"></a>note1</h2><p>合并数据，concat和merge</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data=pd.concat([data1,data2],ignore_index=True)</span><br></pre></td></tr></table></figure>
 <p>纵向合并两DataFrame,ignore_index忽略数据原本的index，重新从0计数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data=pd.merge(data1,data2)</span><br></pre></td></tr></table></figure>
 <p>横向合并两数据集</p>
 <hr>
-<h3 id="note2"><a href="#note2" class="headerlink" title="note2"></a>note2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataFrame[&#x27;labe&#x27;]=DataFrame[&#x27;label&#x27;].apply(func)</span><br></pre></td></tr></table></figure>
+<h2 id="note2"><a href="#note2" class="headerlink" title="note2"></a>note2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataFrame[&#x27;labe&#x27;]=DataFrame[&#x27;label&#x27;].apply(func)</span><br></pre></td></tr></table></figure>
 <p>对一列标签的数据（即Series）数据进行操作,将里面的数据都进行func函数的调度</p>
-<h3 id="note3"><a href="#note3" class="headerlink" title="note3"></a>note3</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataFrame[<span class="string">&#x27;label&#x27;</span>]=DataFrame[<span class="string">&#x27;labe&#x27;</span>].<span class="built_in">map</span>(<span class="type">Dict</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="note3"><a href="#note3" class="headerlink" title="note3"></a>note3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataFrame[<span class="string">&#x27;label&#x27;</span>]=DataFrame[<span class="string">&#x27;labe&#x27;</span>].<span class="built_in">map</span>(<span class="type">Dict</span>)</span><br></pre></td></tr></table></figure>
 <p>将label标签下的元素通过字典映射为新的元素</p>
 <hr>
-<h3 id="note4"><a href="#note4" class="headerlink" title="note4"></a>note4</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="string">&#x27;label&#x27;</span>]=data[<span class="string">&#x27;label&#x27;</span>].fillna(x)</span><br></pre></td></tr></table></figure>
+<h2 id="note4"><a href="#note4" class="headerlink" title="note4"></a>note4</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="string">&#x27;label&#x27;</span>]=data[<span class="string">&#x27;label&#x27;</span>].fillna(x)</span><br></pre></td></tr></table></figure>
 <p>data[‘label’]=data[‘label’].fillna(x)<br>对label标签下的空缺部分填充x</p>
 <hr>
-<h3 id="note5"><a href="#note5" class="headerlink" title="note5"></a>note5</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict1=<span class="built_in">dict</span>(data[<span class="string">&#x27;label&#x27;</span>].value_counts())</span><br></pre></td></tr></table></figure>
+<h2 id="note5"><a href="#note5" class="headerlink" title="note5"></a>note5</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict1=<span class="built_in">dict</span>(data[<span class="string">&#x27;label&#x27;</span>].value_counts())</span><br></pre></td></tr></table></figure>
 <p>生成字典，key:label下的元素,value:相同元素的数量</p>
 <hr>
-<h3 id="note6"><a href="#note6" class="headerlink" title="note6"></a>note6</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.groupby(<span class="string">&#x27;label1&#x27;</span>).mean()</span><br></pre></td></tr></table></figure>
+<h2 id="note6"><a href="#note6" class="headerlink" title="note6"></a>note6</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.groupby(<span class="string">&#x27;label1&#x27;</span>).mean()</span><br></pre></td></tr></table></figure>
 <p>将数据中label1列中的重复值合成一个值，然后把label1中的值当成索引来进行重新的数据分组</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.groupby(<span class="string">&#x27;label1&#x27;</span>)[<span class="string">&#x27;label2&#x27;</span>].mean()</span><br></pre></td></tr></table></figure>
 <p>按label1列来进行分组，取label2列求平均值</p>
 <hr>
-<h3 id="note7"><a href="#note7" class="headerlink" title="note7"></a>note7</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[]</span><br></pre></td></tr></table></figure>
+<h2 id="note7"><a href="#note7" class="headerlink" title="note7"></a>note7</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[]</span><br></pre></td></tr></table></figure>
 <p>根据行列的标签值查询</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[(data[<span class="string">&#x27;label1&#x27;</span>].apply(<span class="keyword">lambda</span> x:x <span class="keyword">in</span> <span class="built_in">list</span>)),<span class="string">&#x27;label2&#x27;</span>]=<span class="string">&#x27;x&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>查询出label1标签中的元素是否在list中，如果在，就将label2标签中的元素改为x</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data1.loc[(data.label1.isnull()),<span class="string">&#x27;lable1&#x27;</span>]=data2.label3</span><br></pre></td></tr></table></figure>
 <p>将data1中label1标签空缺的部分，用data3中label3来填充</p>
 <hr>
-<h3 id="note8"><a href="#note8" class="headerlink" title="note8"></a>note8</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[]</span><br></pre></td></tr></table></figure>
+<h2 id="note8"><a href="#note8" class="headerlink" title="note8"></a>note8</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[]</span><br></pre></td></tr></table></figure>
 <p>根据行列的索引位置查询</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[:,:]</span><br></pre></td></tr></table></figure>
 <p>整个数据，所有行所有列</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[:,:].values[:,<span class="number">1</span>:]</span><br><span class="line">data.iloc[:,:].values[:,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>提取所有行的第1列数据以后的所有数据<br>提取所有行的第0列数据</p>
 <hr>
-<h3 id="note9"><a href="#note9" class="headerlink" title="note9"></a>note9</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.get_dummies(data)</span><br></pre></td></tr></table></figure>
+<h2 id="note9"><a href="#note9" class="headerlink" title="note9"></a>note9</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.get_dummies(data)</span><br></pre></td></tr></table></figure>
 <p>对数据进行one-hot编码，DataFrame中数字部分不会进行one-hot编码，但Series会对数据进行one-hot编码</p>
 <hr>
-<h3 id="note10"><a href="#note10" class="headerlink" title="note10"></a>note10</h3><p>DataFrame中常用的方法</p>
+<h2 id="note10"><a href="#note10" class="headerlink" title="note10"></a>note10</h2><p>DataFrame中常用的方法</p>
 <ul>
 <li>data.head(5)    #查看前五行</li>
 <li>data.tail(3)    #查看后三行</li>
@@ -404,7 +404,7 @@
   <!-- 修改时间 -->
   <li>
     <strong>修改时间： </strong>
-    2021年10月04日 - 15时10分
+    2021年10月04日 - 16时10分
   </li>
 
   <!-- 引用链接 -->
@@ -464,7 +464,10 @@
     <a href="/2021/08/30/%E5%88%9D%E5%AD%A6%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="prev" title="机器学习-吴恩达">
       <i class="fa fa-chevron-left"></i> 机器学习-吴恩达
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/16/%E8%AE%BA%E6%96%872/" rel="next" title="论文2">
+      论文2 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -524,7 +527,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2121-9-3"><span class="nav-text">2121.9.3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#note1"><span class="nav-text">note1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note2"><span class="nav-text">note2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note3"><span class="nav-text">note3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note4"><span class="nav-text">note4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note5"><span class="nav-text">note5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note6"><span class="nav-text">note6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note7"><span class="nav-text">note7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note8"><span class="nav-text">note8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note9"><span class="nav-text">note9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#note10"><span class="nav-text">note10</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2121-9-3"><span class="nav-text">2121.9.3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#note1"><span class="nav-text">note1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note2"><span class="nav-text">note2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note3"><span class="nav-text">note3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note4"><span class="nav-text">note4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note5"><span class="nav-text">note5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note6"><span class="nav-text">note6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note7"><span class="nav-text">note7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note8"><span class="nav-text">note8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note9"><span class="nav-text">note9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note10"><span class="nav-text">note10</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -540,20 +543,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -601,13 +604,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">24k</span>
+    <span title="站点总字数">27k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
 </div>
 
         
