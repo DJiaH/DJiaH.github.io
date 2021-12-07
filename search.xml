@@ -70,18 +70,6 @@
       </tags>
   </entry>
   <entry>
-    <title>第一篇博客</title>
-    <url>/2021/08/03/welcome-to-hexo/</url>
-    <content><![CDATA[<h1 id="这是我在hexo写的第一篇博客"><a href="#这是我在hexo写的第一篇博客" class="headerlink" title="这是我在hexo写的第一篇博客"></a>这是我在hexo写的第一篇博客</h1><p>最近突然就想着搭建一个属于自己的博客，想要一个自己的小天地用来记录自己的研究生生活。<br>这个博客是用hexo+next来搭建完成的，很喜欢这种简约的风格。我是参作<a href="http://yearito.cn/">yearito</a>来搭建的，基本上可以说是他的复制了。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外地上学感悟</title>
     <url>/2021/08/24/%E5%A4%96%E5%9C%B0%E4%B8%8A%E5%AD%A6%E6%84%9F%E6%82%9F/</url>
     <content><![CDATA[<h1 id="山东"><a href="#山东" class="headerlink" title="山东"></a>山东</h1><p>刚出飞机场的时候，我感觉很舒服，可能是因为四川太热了吧。这边的天气让我倍感舒服，甚至感觉到处都是鸟语花香，深吸一口气都能闻到不远处海风的味道(其实胶东机场离海边还是有点距离的，完全是我的心理作用)。机场有个大巴是直达学校的，这点让我倍感欣慰，省去了地铁转线的麻烦和打车费用的昂贵</p>
@@ -96,6 +84,18 @@
       </categories>
       <tags>
         <tag>读研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2021/08/03/welcome-to-hexo/</url>
+    <content><![CDATA[<h1 id="这是我在hexo写的第一篇博客"><a href="#这是我在hexo写的第一篇博客" class="headerlink" title="这是我在hexo写的第一篇博客"></a>这是我在hexo写的第一篇博客</h1><p>最近突然就想着搭建一个属于自己的博客，想要一个自己的小天地用来记录自己的研究生生活。<br>这个博客是用hexo+next来搭建完成的，很喜欢这种简约的风格。我是参作<a href="http://yearito.cn/">yearito</a>来搭建的，基本上可以说是他的复制了。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -144,7 +144,7 @@
     <url>/2021/10/16/%E8%AE%BA%E6%96%872/</url>
     <content><![CDATA[<h1 id="论文：Self-Attention-ConvLSTM-for-Spatiotemporal-Prediction"><a href="#论文：Self-Attention-ConvLSTM-for-Spatiotemporal-Prediction" class="headerlink" title="论文：Self-Attention ConvLSTM for Spatiotemporal Prediction"></a>论文：Self-Attention ConvLSTM for Spatiotemporal Prediction</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h2><p>   ConvLSTM在时空预测方面取得了不错的成绩，但通过堆叠的卷积层来捕获远程空间依赖性，有效的感受野远小于理论感受野。现有的改进方法TraiGRU工作方式类似于可变形卷积，学习到的偏移量仅提供了稀疏的空间依赖性。因此对于长距离的空间依赖的捕捉仍然是个问题<br>   而自注意力模块能够在单个网络层获取全局的空间上下文，所以本文引入了额外的记忆单元 M， 并且M可以通过门控机制来捕捉时间上长期的特征依赖。<br><strong>主要贡献</strong></p>
 <p> 1.提出了一种新的ConvLSTM变体，称为SA-ConvLSTM，可以成功捕获长期的空间依赖性。<br> 2.设计了一个基于记忆的自我注意模块（memory-based self-attention module, SAM），以在预测过程中记忆全局时空依赖性。<br> 3.在MovingMNIST和KTH数据集上进行多帧预测，使用TexiBJ数据集进行交通流预测，以更少的参数和更高的效率在所有数据集中获得最佳结果。</p>
-<h2 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2.Methods"></a>2.Methods</h2><h3 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h3><p><img src="https://img-blog.csdnimg.cn/2dcddb902fca416e9e8093dd2d104f88.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,,t_70,g_se,x_16" alt="在这里插入图片描述"><br>$$H_t为当前时间步的特征图。query:Q_c=W_qH_t，key:K_h=W_kH_t，value:V_h=W_vH_t。$$<br>$$其中W_q,W_k,W_v都是1<em>1的卷积核，设原数据为C</em>H<em>W,C为通道数，则H_t为C</em>N，其中N=H*W。$$<br><strong>相似度得分计算公式:</strong><br>$$e=Q_h^TK_h∈R^{N×N}$$<br><strong>归一化：</strong><br>$$a_{i,j}=\frac{exp (e_{i,j})}{\sum^N_{k=1} exp(e_{i,k})} ,i,j∈{1,2,3…N}$$<br><strong>第i个位置的汇总特征是使用所有位置的加权总和来计算的：</strong><br>$$Z_i=\sum^N_{j=i}a_{i,j}(W_vH_{t;j})$$</p>
+<h2 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2.Methods"></a>2.Methods</h2><h3 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h3><p><img src="https://img-blog.csdnimg.cn/2dcddb902fca416e9e8093dd2d104f88.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,,t_70,g_se,x_16" alt="在这里插入图片描述"><br>$$H_t为当前时间步的特征图。query:Q_c=W_qH_t，key:K_h=W_kH_t，value:V_h=W_vH_t。$$<br>$$其中W_q,W_k,W_v都是1<em>1的卷积核，设原数据为C</em>H<em>W,C为通道数，则H_t为C</em>N，其中N=H*W.$$<br><strong>相似度得分计算公式:</strong><br>$$e=Q_h^TK_h∈R^{N×N}$$<br><strong>归一化：</strong><br>$$a_{i,j}=\frac{exp (e_{i,j})}{\sum^N_{k=1} exp(e_{i,k})} ,i,j∈{1,2,3…N}$$<br><strong>第i个位置的汇总特征是使用所有位置的加权总和来计算的：</strong><br>$$Z_i=\sum^N_{j=i}a_{i,j}(W_vH_{t;j})$$</p>
 <h3 id="Self-Attention-Memory-Module"><a href="#Self-Attention-Memory-Module" class="headerlink" title="Self-Attention Memory Module"></a>Self-Attention Memory Module</h3><p><img src="https://img-blog.csdnimg.cn/120ec832b35243c0a93d9d2af1023c82.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 <p>通过对Self-Attention基础模型加以改进，以捕捉时间和空间上的全局特征依赖，提出了Self-Attention Memory(SAM)模块，结构如上图所示。SAM模块接受两个输入：当前时间步的输入特征$H_t$和上一个时间步的记忆单元$M_{t-1}$,结构可分为三个部分：用以获取全局上下文信息的特征聚合(Feature Aggregation),以及记忆更新（Memory Updating）和输出（Output）。</p>
 <p><strong>Feature Aggregation</strong><br><img src="https://img-blog.csdnimg.cn/ee02a7eff075478a83a4795a4149682a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>通过两个Attention将当前时间步的输入特征$H_t$和上个时间步的记忆单元$M_{t-1}$，分别映射为$Z_h$和$Z_m$然后进行concat，经过1*1卷积得到后面的Z。</p>
@@ -274,10 +274,19 @@
 <h2 id="32模型展示1"><a href="#32模型展示1" class="headerlink" title="32模型展示1"></a>32模型展示1</h2><p><img src="https://img-blog.csdnimg.cn/72c1de8914df4018a560eae34de6c388.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/676cc00568ae4ad4a63fe77148e8decd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 <p>&emsp; &emsp;$x_0$被称为偏置单元或偏置神经元，取值为1.<br>&emsp; &emsp;$\theta$在此处一般被称之为权重。</p>
 <p><img src="https://img-blog.csdnimg.cn/5e6ea2f9cf4c43d1981120093d6af521.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_16,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>&emsp; &emsp;在神经元中，第一层被称为输入层，最后一层被称为输出层，中间的都被称为隐藏层。<br>$$a_1^{(2)}=g(\theta^{(1)}<em>{10}x_0+\theta^{(1)}</em>{11}x_1+\theta^{(1)}<em>{12}x_2+\theta^{(1)}</em>{13}x_3)$$<br>$$a_2^{(2)}=g(\theta^{(1)}<em>{20}x_0+\theta^{(1)}</em>{21}x_1+\theta^{(1)}<em>{22}x_2+\theta^{(1)}</em>{23}x_3)$$<br>$$a_3^{(2)}=g(\theta^{(1)}<em>{30}x_0+\theta^{(1)}</em>{31}x_1+\theta^{(1)}<em>{32}x_2+\theta^{(1)}</em>{33}x_3)$$<br>$$h_\theta(x)=g(\theta^{(2)}<em>{10}a_0^{(2)}+\theta^{(2)}</em>{11}a_1^{(2)}+\theta^{(2)}<em>{12}a_2^{(2)}+\theta^{(2)}</em>{13}a_3^{(2)})$$<br>&emsp; &emsp;每一个神经元都是一个激活函数。则整个神经网络的参数输了就是每一层参数数量的乘积。</p>
+<hr>
+<p>&emsp; &emsp;在神经元中，第一层被称为输入层，最后一层被称为输出层，中间的都被称为隐藏层。</p>
+<p>$$ a_1^{(2)}=g(\theta_{10}^{(1)}x_0+\theta_{11}^{(1)}) $$<br>$$ a_1^{(2)}=g(\theta_{10}^{(1)}x_0+\theta_{11}^{(1)}x_1+\theta_{12}^{(1)}x_2+\theta_{13}^{(1)}x_3) $$</p>
+<p>$$a_2^{(2)}=g(\theta_{20}^{(1)}x_0+\theta_{21}^{(1)}x_1+\theta_{22}^{(1)}x_2+\theta_{23}^{(1)}x_3)$$</p>
+<p>$$a_3^{(2)}=g(\theta_{30}^{(1)}x_0+\theta_{31}^{(1)}x_1+\theta_{32}^{(1)}x_2+\theta_{33}^{(1)}x_3)$$</p>
+<p>$$h_\theta(x)=g(\theta_{10}^{(2)}a_0^{(2)}+\theta_{10}^{(2)}a_1^{(2)}+\theta_{12}^{(2)}a_2^{(2)}+\theta_{13}^{(2)}a_3^{(2)})$$</p>
+<p>&emsp; &emsp;每一个神经元都是一个激活函数。则整个神经网络的参数输了就是每一层参数数量的乘积。</p>
 <h2 id="33模型展示2"><a href="#33模型展示2" class="headerlink" title="33模型展示2"></a>33模型展示2</h2><p>&emsp; &emsp;从输入层到计算出$h_\theta(x)$的过程称为前向传播。<br>&emsp; &emsp;神经网络所做的事情其实就和Logistic回归一样，只不过输入值变成了上一层网络的输出值。</p>
 <hr>
-<h1 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h1><h2 id="34代价函数"><a href="#34代价函数" class="headerlink" title="34代价函数"></a>34代价函数</h2><p><strong>逻辑回归</strong><br>$$J(\theta)=-\frac{1}{m}[\sum^m_{i=1}y^{(i)}log(h_\theta(x^{(i)}))+(1-y^{(i)})log(1-h_\theta(x^{(i)}))]+\frac{\lambda}{2m}\sum^n_{j=1}\theta^2_j$$<br><strong>神经网络</strong><br>$$h_\theta(x)\in R^K(h_\theta(x)是一个K维向量)，(h_\theta(x))<em>i是第i个输出$$<br>$$J(\theta)=-\frac{1}{m}[\sum^m</em>{i=1}\sum^K_{k=1}y^{(i)}<em>klog(h_\theta(x^{(i)}))<em>k+(1-y^{(i)}<em>k)log(1-(h_\theta(x^{(i)}))<em>k)]+\frac{\lambda}{2m}\sum^{L-1}</em>{l=1}\sum^{s_l}</em>{i=1}\sum^{s</em>{l+1}}</em>{j=1}(\theta^{(l)}_{ji})^2$$</p>
+<h1 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h1><h2 id="34代价函数"><a href="#34代价函数" class="headerlink" title="34代价函数"></a>34代价函数</h2><p><strong>逻辑回归</strong></p>
+<p>$$J(\theta)=-\frac{1}{m}[\sum^m_{i=1}y^{(i)}log(h_\theta(x^{(i)}))+(1-y^{(i)})log(1-h_\theta(x^{(i)}))]+\frac{\lambda}{2m}\sum^n_{j=1}\theta^2_j$$<br><strong>神经网络</strong></p>
+<p>$$h_\theta(x)\in R^K(h_\theta(x)是一个K维向量),(h_\theta(x))_i是第i个输出$$</p>
+<p><img src="https://img-blog.csdnimg.cn/9267adc944c34e1d8f4fd1c803718a9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 <h2 id="35反向传播算法"><a href="#35反向传播算法" class="headerlink" title="35反向传播算法"></a>35反向传播算法</h2><p><strong>前向传播</strong><br>&emsp; &emsp;从输入层向前逐层运算后得出结果<br><img src="https://img-blog.csdnimg.cn/11b2f50894b0492c913efd274bc5c51a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><strong>反向传播（backpropagation）</strong><br>&emsp; &emsp;直观上是算出真实值和神经网络的计算值之间的差。让代价函数最小化的算法</p>
 <p>&emsp; &emsp;$\delta^{(l)}_j代表了第l层的第j个节点的误差$。<br>&emsp; &emsp;对每一个输出计算（第四层网络）：<br>&emsp; &emsp;$\delta^{(4)}_j=a^{(4)}_j-y_j，向量计算法：\delta^{(4)}=a^{(4)}-y$</p>
 <hr>
@@ -292,15 +301,21 @@
 <h2 id="38随机初始化"><a href="#38随机初始化" class="headerlink" title="38随机初始化"></a>38随机初始化</h2><p>&emsp; &emsp;当我们使用梯度下降或一些高级算法的时候，我们需要对θ选取一些初始值。<br>&emsp; &emsp;θ可以全部被初始化为0，但是在实际训练中，全部初始化为0起不了任何作用。所有的初始值相同会导致最终每个节点在梯度下降以后的结果相同，这意味着所有的节点都在计算相同的特征，这是一种高度荣誉的现象。最终的输出结果只计算了一个特征，这种情况阻止了网络去学习其他特征。<br>&emsp; &emsp;所以我们在初始化的时候应该选取接近于0的随机初始值。</p>
 <h2 id="39组合到一起"><a href="#39组合到一起" class="headerlink" title="39组合到一起"></a>39组合到一起</h2><p>&emsp; &emsp;在进行神经网络训练之前，我们要选取一个合适的网络架构。<br>&emsp; &emsp;一般输入层的单元个数由你的数据集特征的维度所决定，输出层的单元个数取决于目标分类的个数。<br>&emsp; &emsp;对于应藏层，合理的默认值是一层应藏层，如果选择不止一层隐藏层的话将每层的节点个数设为相同，节点的个数越多越好，不过太多的话计算会很慢，一般设为输入层的几倍即可。</p>
 <hr>
-<h1 id="机器学习应用的一些建议"><a href="#机器学习应用的一些建议" class="headerlink" title="机器学习应用的一些建议"></a>机器学习应用的一些建议</h1><h2 id="40评估假设"><a href="#40评估假设" class="headerlink" title="40评估假设"></a>40评估假设</h2><p>&emsp; &emsp;将数据集划分成训练集和测试机，一般按照7：3的比例。<br><strong>线性回归的训练测试流程</strong><br>&emsp; &emsp;在训练集上学习参数$\theta$（最小化训练误差$J(\theta)$）<br>&emsp; &emsp;计算测试机误差：<br>$$J_{test}(\theta)=\frac{1}{2m_{test}}\sum^{m_{test}}<em>{i=1}(h_\theta(x^{(i)}</em>{test})-y^{(i)}<em>{test})^2$$<br><strong>Logistic回归的训练测试流程</strong><br>&emsp; &emsp;对于Logistic回归也可以像线性回归一样在训练集上学习参数$\theta$,然后在测试集上计算误差$J(\theta)$.<br>&emsp; &emsp;还有一种评估标准叫做错误分类<br>$$err(h_\theta(x),y)=\begin{cases}1,&amp;if&amp;h_\theta(x)\geq0.5,y=0 &amp;or &amp; if&amp;h_\theta(x)&lt;0.5,y=1 \<br>0,&amp;otherwise&amp;<br>\end{cases}$$<br>$$Test</em>{error}=\frac{1}{m_{test}}\sum^{m_{test}}<em>{i=1}err(h_\theta(x^{(i)}</em>{test}),y^{(i)}_{test})$$</p>
+<h1 id="机器学习应用的一些建议"><a href="#机器学习应用的一些建议" class="headerlink" title="机器学习应用的一些建议"></a>机器学习应用的一些建议</h1><h2 id="40评估假设"><a href="#40评估假设" class="headerlink" title="40评估假设"></a>40评估假设</h2><p>&emsp; &emsp;将数据集划分成训练集和测试机，一般按照7：3的比例。<br><strong>线性回归的训练测试流程</strong><br>&emsp; &emsp;在训练集上学习参数$\theta$（最小化训练误差$J(\theta)$）<br>&emsp; &emsp;计算测试机误差：<br>$$J_{test}(\theta)=\frac{1}{2m_{test}}\sum_{i=1}^{m_{test}}(h_\theta(x_{test}^{(i)})-y_{test}^{(i)})^2 $$<br><strong>Logistic回归的训练测试流程</strong><br>&emsp; &emsp;对于Logistic回归也可以像线性回归一样在训练集上学习参数$\theta$,然后在测试集上计算误差$J(\theta)$.<br>&emsp; &emsp;还有一种评估标准叫做错误分类<br>$$err(h_\theta(x),y)=\begin{cases}1,&amp;if&amp;h_\theta(x)\geq0.5,y=0 &amp;or &amp; if&amp;h_\theta(x)&lt;0.5,y=1 \<br>0,&amp;otherwise&amp;<br>\end{cases}$$</p>
+<p>$$Test_{error}=\frac{1}{m_{test}}\sum_{i=1}^{m_{test}}err(h_\theta(x_{test}^{(i)}),y_{test}^{(i)}) $$</p>
 <h2 id="41模型选择和训练、验证、测试集"><a href="#41模型选择和训练、验证、测试集" class="headerlink" title="41模型选择和训练、验证、测试集"></a>41模型选择和训练、验证、测试集</h2><p>&emsp; &emsp;由于需要测试模型的泛化能力，如果之划分训练集和测试集，则在训练集上训练，用测试集找出复杂程度最适合的模型，接下来我们将无法进行泛化能力的检测。所以要在划分一个交叉验证集（cross validation）出来。<br>&emsp; &emsp;一般训练、验证、测试集经典划分为6:2:2.<br>&emsp; &emsp;接下来我们使用训练集训练模型，使用验证集选择模型，使用测试集来验证模型的泛化能力。</p>
 <h2 id="42诊断偏差与方差"><a href="#42诊断偏差与方差" class="headerlink" title="42诊断偏差与方差"></a>42诊断偏差与方差</h2><p><img src="https://img-blog.csdnimg.cn/06082d7a8d8a4ffda9c5722cc4736577.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">&emsp; &emsp;当模型偏差高的时候，训练误差和验证误差都很高，原因是模型简单。当模型方差高的时候，训练误差很低，但验证误差远大于训练误差，原因是模型过于复杂，泛化能力差。</p>
-<h2 id="43正则化和偏差、方差"><a href="#43正则化和偏差、方差" class="headerlink" title="43正则化和偏差、方差"></a>43正则化和偏差、方差</h2><p>&emsp; &emsp;当正则项$\lambda$过大的时候会导致模型过于简单偏差过高欠拟合，反之过小的时候会导致模型过于复杂方差过高过拟合。<br><img src="https://img-blog.csdnimg.cn/eae4865a75e04f4ea2fb29cb0eb14df5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_11,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h2 id="44学习曲线"><a href="#44学习曲线" class="headerlink" title="44学习曲线"></a>44学习曲线</h2><p>&emsp; &emsp;随着训练样本的增加，训练误差会越来越大，想要拟合所有数据越来越难；而验证误差会逐渐减小，因为模型泛化能力增加。<br><img src="https://img-blog.csdnimg.cn/f65f8730aeaa44398f2d3461b2e950b4.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><strong>高偏差</strong><br>&emsp; &emsp;对于高偏差情况，验证误差和训练误差都很大，随着训练集的增加会逐渐趋于平台且很接近。对于高偏差情况继续增加训练样本并没有帮助。<br><img src="https://img-blog.csdnimg.cn/eed2a8b3472e412fbb1fc2cb33f8c450.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><strong>高方差</strong><br>&emsp; &emsp;对于高方差情况，一开始验证误差会很高，训练误差比较低，且两种误差之间简矩很大。但随着样本数量的增加，训练误差逐渐增大，验证误差逐渐减小，慢慢靠近。所以在高方差的情况下，增加训练样本是有帮助的<br><img src="https://img-blog.csdnimg.cn/cc4b7ea5046044de9043e4b3dcb8e7cc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h2 id="45决定接下来做什么"><a href="#45决定接下来做什么" class="headerlink" title="45决定接下来做什么"></a>45决定接下来做什么</h2><p><strong>线性回归</strong><br>|方案 |解决问题  |<br>|–|–|<br>|  获取更多的训练样本| 修正高方差 |<br>|减少特征数量|修正高方差|<br>|增加特征|修正高偏差|<br>|增加多项式特征（复杂度）|修正高偏差|<br>|减少正则项$\lambda$|修正高偏差|<br>|增大正则项$\lambda$|修正高方差|<br><strong>神经网络</strong><br>&emsp; &emsp;使用简单的神经网络，参数更少，计算量更小，但容易欠拟合。<br>&emsp; &emsp;使用复杂的神经网络，更多的参数，计算量更大，更容易过拟合。但是可以使用正则项来解决过拟合问题，通常复杂网络加正则项的方案比使用简单的神经网络更好。</p>
+<h2 id="43正则化和偏差、方差"><a href="#43正则化和偏差、方差" class="headerlink" title="43正则化和偏差、方差"></a>43正则化和偏差、方差</h2><p>&emsp; &emsp;当正则项$\lambda$过大的时候会导致模型过于简单偏差过高欠拟合，反之过小的时候会导致模型过于复杂方差过高过拟合。<br><img src="https://img-blog.csdnimg.cn/eae4865a75e04f4ea2fb29cb0eb14df5.png" alt="在这里插入图片描述"></p>
+<h2 id="44学习曲线"><a href="#44学习曲线" class="headerlink" title="44学习曲线"></a>44学习曲线</h2><p>&emsp; &emsp;随着训练样本的增加，训练误差会越来越大，想要拟合所有数据越来越难；而验证误差会逐渐减小，因为模型泛化能力增加。<br><img src="https://img-blog.csdnimg.cn/f65f8730aeaa44398f2d3461b2e950b4.png" alt="在这里插入图片描述"><br><strong>高偏差</strong><br>&emsp; &emsp;对于高偏差情况，验证误差和训练误差都很大，随着训练集的增加会逐渐趋于平台且很接近。对于高偏差情况继续增加训练样本并没有帮助。<br><img src="https://img-blog.csdnimg.cn/eed2a8b3472e412fbb1fc2cb33f8c450.png" alt="在这里插入图片描述"></p>
+<p><strong>高方差</strong><br>&emsp; &emsp;对于高方差情况，一开始验证误差会很高，训练误差比较低，且两种误差之间简矩很大。但随着样本数量的增加，训练误差逐渐增大，验证误差逐渐减小，慢慢靠近。所以在高方差的情况下，增加训练样本是有帮助的<br><img src="https://img-blog.csdnimg.cn/cc4b7ea5046044de9043e4b3dcb8e7cc.png" alt="在这里插入图片描述"></p>
+<h2 id="45决定接下来做什么"><a href="#45决定接下来做什么" class="headerlink" title="45决定接下来做什么"></a>45决定接下来做什么</h2><p><strong>线性回归</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/000ec83b690648e995d4369e9d2f3d65.png" alt="在这里插入图片描述"></p>
+<p><strong>神经网络</strong><br>&emsp; &emsp;使用简单的神经网络，参数更少，计算量更小，但容易欠拟合。<br>&emsp; &emsp;使用复杂的神经网络，更多的参数，计算量更大，更容易过拟合。但是可以使用正则项来解决过拟合问题，通常复杂网络加正则项的方案比使用简单的神经网络更好。</p>
 <hr>
 <h1 id="机器学习系统设计"><a href="#机器学习系统设计" class="headerlink" title="机器学习系统设计"></a>机器学习系统设计</h1><h2 id="46误差分析"><a href="#46误差分析" class="headerlink" title="46误差分析"></a>46误差分析</h2><p>&emsp; &emsp;在系统设计上建议先使用一个简单粗暴的算法快速实现，然后进行误差分析，来了解你的模型主要是在哪些方面不足，这样能快速抓住后期工作的正确方向。<br>&emsp; &emsp;建议在交叉验证集上做误差分析，而不是在测试集上。使用数值评估方法很重要。</p>
-<h2 id="47不对称性分类的误差评估"><a href="#47不对称性分类的误差评估" class="headerlink" title="47不对称性分类的误差评估"></a>47不对称性分类的误差评估</h2><p>&emsp; &emsp;当一类样本数量远低于另一类的时候，我们称其为偏斜类（skewed classes）。此时在使用精确度来评估模型将不再合适，而应使用查准率与召回率的度量标准。<br>|  |样本为真| 样本为假 |<br>|–|–|–|<br>|预测为真|真正例（TP）|假正例（FP）|<br> |预测为假|假反例（FN )|真反例（TN）|<br> &emsp; &emsp;<strong>查准率</strong>：在我们预测为真的样本中，到底有多少真的为真样本。<br> $$查准率=\frac{真正例}{预测为真的例子}=\frac{TP}{TP+FP}$$<br> &emsp; &emsp;<strong>召回率</strong>：我们所预测为真的样本占总的正样本<br> $$召回率=\frac{真正例}{真实为真的例子}=\frac{TP}{TP+FN}$$</p>
+<h2 id="47不对称性分类的误差评估"><a href="#47不对称性分类的误差评估" class="headerlink" title="47不对称性分类的误差评估"></a>47不对称性分类的误差评估</h2><p>&emsp; &emsp;当一类样本数量远低于另一类的时候，我们称其为偏斜类（skewed classes）。此时在使用精确度来评估模型将不再合适，而应使用查准率与召回率的度量标准。</p>
+<p><img src="https://img-blog.csdnimg.cn/7f25df3f734b4d779ebf53bca2dc80e3.png" alt="在这里插入图片描述"></p>
+<p> &emsp; &emsp;<strong>查准率</strong>：在我们预测为真的样本中，到底有多少真的为真样本。<br> $$查准率=\frac{真正例}{预测为真的例子}=\frac{TP}{TP+FP}$$<br> &emsp; &emsp;<strong>召回率</strong>：我们所预测为真的样本占总的正样本<br> $$召回率=\frac{真正例}{真实为真的例子}=\frac{TP}{TP+FN}$$</p>
 <p>  &emsp; &emsp;使用查准率与召回率，即便是在有偏斜类的情况下，我们也能根据是否两项指标都很高来判断我们的算法是否很好。</p>
 <h2 id="48-精确度和召回率的权衡"><a href="#48-精确度和召回率的权衡" class="headerlink" title="48 精确度和召回率的权衡"></a>48 精确度和召回率的权衡</h2><p> &emsp; &emsp;根据不同的情况，我们有时需要高查准率，有时又需要高召回率。对于不同的查准率和召回率，如何去决定哪一个模型更好，我们可以是用如下方法：<br> <strong>F1 Score</strong><br>$$F1Score=2\frac{PR}{P+R}$$<br>||Precision（P） |Recall（R）|Average|F1 Score|<br>|–|–|–|–|–|<br>|Algorithm1|0.5|0.4|0.45|0.444|<br>|Algorithm2|0.7|0.1|0.4|0.175|<br>|Algorithm3|0.02|1.|0.51|0.0392|<br> &emsp; &emsp;可以看出使用平均数并不是一个好的评估方法，而F1 Score的分子可以看出，只有在查准率和召回率都很高的时候得分才会很高。</p>
 <h2 id="49机器学习数据"><a href="#49机器学习数据" class="headerlink" title="49机器学习数据"></a>49机器学习数据</h2><p> &emsp; &emsp;真正提高学习算法性能的方法是给予一个算法大量的训练数据，不同的算法可能会有细微的误差，但总的趋势都是随着数据量的增加从而性能提高。<br> <img src="https://img-blog.csdnimg.cn/b140858a61e64301a6666ffa83a004d0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAcXFfNDA1NDExMTE=,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
