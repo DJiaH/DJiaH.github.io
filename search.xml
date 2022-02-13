@@ -70,6 +70,18 @@
       </tags>
   </entry>
   <entry>
+    <title>第一篇博客</title>
+    <url>/2021/08/03/welcome-to-hexo/</url>
+    <content><![CDATA[<h1 id="这是我在hexo写的第一篇博客"><a href="#这是我在hexo写的第一篇博客" class="headerlink" title="这是我在hexo写的第一篇博客"></a>这是我在hexo写的第一篇博客</h1><p>最近突然就想着搭建一个属于自己的博客，想要一个自己的小天地用来记录自己的研究生生活。<br>这个博客是用hexo+next来搭建完成的，很喜欢这种简约的风格。我是参作<a href="http://yearito.cn/">yearito</a>来搭建的，基本上可以说是他的复制了。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外地上学感悟</title>
     <url>/2021/08/24/%E5%A4%96%E5%9C%B0%E4%B8%8A%E5%AD%A6%E6%84%9F%E6%82%9F/</url>
     <content><![CDATA[<h1 id="山东"><a href="#山东" class="headerlink" title="山东"></a>山东</h1><p>刚出飞机场的时候，我感觉很舒服，可能是因为四川太热了吧。这边的天气让我倍感舒服，甚至感觉到处都是鸟语花香，深吸一口气都能闻到不远处海风的味道(其实胶东机场离海边还是有点距离的，完全是我的心理作用)。机场有个大巴是直达学校的，这点让我倍感欣慰，省去了地铁转线的麻烦和打车费用的昂贵</p>
@@ -84,18 +96,6 @@
       </categories>
       <tags>
         <tag>读研</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一篇博客</title>
-    <url>/2021/08/03/welcome-to-hexo/</url>
-    <content><![CDATA[<h1 id="这是我在hexo写的第一篇博客"><a href="#这是我在hexo写的第一篇博客" class="headerlink" title="这是我在hexo写的第一篇博客"></a>这是我在hexo写的第一篇博客</h1><p>最近突然就想着搭建一个属于自己的博客，想要一个自己的小天地用来记录自己的研究生生活。<br>这个博客是用hexo+next来搭建完成的，很喜欢这种简约的风格。我是参作<a href="http://yearito.cn/">yearito</a>来搭建的，基本上可以说是他的复制了。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
