@@ -30,7 +30,7 @@
 <meta property="og:description" content="var APP_ID &#x3D; &#39;8NgRMFCCs6HQnuzWUSTMECaS-9Nh9j0Va&#39;;  &#x2F;&#x2F;输入个人LeanCloud账号AppID   var APP_KEY &#x3D; &#39;uidVNungtsbukSS2Xu7xyChz&#39;;  &#x2F;&#x2F;输入个人LeanCloud账号AppKey   AV.init({     appId: APP_ID,     appKey: APP_KEY">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-26T08:00:01.000Z">
-<meta property="article:modified_time" content="2022-02-13T08:51:08.883Z">
+<meta property="article:modified_time" content="2022-02-13T08:54:41.441Z">
 <meta property="article:author" content="DJH">
 <meta name="twitter:card" content="summary">
 
@@ -240,7 +240,7 @@
   query.limit(10);  //最终只返回10条结果
   query.find().then( response => {
     var content = response.reduce( (accum, {attributes}) => {
-      accum += `<p><div class="prefix">热度 ${attributes.time} ℃</div><div><a href="${attributes.url}">${attributes.title}</a></div></p>`
+      accum += `<p><div class="prefix">浏览量 ${attributes.time}</div><div><a href="${attributes.url}">${attributes.title}</a></div></p>`
       return accum;
     },"")
     document.querySelector("#post-rank").innerHTML = content;
@@ -333,7 +333,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -394,13 +394,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">27k</span>
+    <span title="站点总字数">28k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">26 分钟</span>
 </div>
 
         

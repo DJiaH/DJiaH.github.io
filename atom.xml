@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-16T01:53:15.116Z</updated>
+  <updated>2022-05-23T06:36:03.755Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论文3</title>
+    <link href="http://example.com/2022/02/23/%E8%AE%BA%E6%96%873/"/>
+    <id>http://example.com/2022/02/23/%E8%AE%BA%E6%96%873/</id>
+    <published>2022-02-23T11:22:46.000Z</published>
+    <updated>2022-05-23T06:36:03.755Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="论文：A-spatiotemporal-deep-learning-model-for-sea-surface-temperature-field"><a href="#论文：A-spatiotemporal-deep-learning-model-for-sea-surface-temperature-field" class="headerlink" title="论文：A spatiotemporal deep learning model for sea surface temperature field"></a>论文：A spatiotemporal deep learning model for sea surface temperature field</h1><p>prediction using time-series satellite data</p><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h2><p>&nbsp;&nbsp; SST(sea surface temperature)的预测方法可以概况为三类，包括数值方法、数据驱动方法以及这两者的结合。数值方法是基于物理、化学和生物参数以及它们之间复杂的相互关系。数据驱动方法试图从以数据为中心的角度解决SST预测问题，相当于从观察中发现的模型和关系生成观察到的SST的过程，然后使用学习到的模型来推断未来的SST。数据驱动方法需要较少的海洋和大气领域知识，比数值方法简单，适用于较小尺度的高分辨率SST预测。数据驱动方法包括机器学习（SVM、神经网络）和人工智能（遗传算法（GA）、粒子群优化（PSO））。本文主要研究中国东海高分辨率地区的SST预测，使用的是数据驱动方法。</p><p>&nbsp;&nbsp;传统的数据驱动方法大多是独立地处理一个区域中每个点的观测值，而没有考虑周围点的影响，这会降低预测的性能，而且预测过程通常是每个点单独进行的，非常不方便。也就是说要考虑时空因素的影响并且能以端到端的方式预测区域的SST。ConvLSTM（卷积长短期记忆）就非常适合这类任务。</p><p><strong>本文贡献</strong><br>1)开发一个时空深度学习模型，该模型可以模拟和捕捉SST的空间和时间相关性，并以端到端的方式准确和整体地预测SST场.<br>2)利用36年的时间序列卫星资料，通过在中国东海选定区域的试验，考察所开发模式在预测短期和中期日海温场方面的适用性、有效性和优势。</p><h2 id="2-Study-area-and-data"><a href="#2-Study-area-and-data" class="headerlink" title="2.Study area and data"></a>2.Study area and data</h2><h3 id="2-1-Study-area"><a href="#2-1-Study-area" class="headerlink" title="2.1.Study area"></a>2.1.Study area</h3><p>研究区域位于中国东海,年平均水温在20°C和24°C之间，年温差在7°C和9°C之间。东海SST的波动特性使其适合用于测试所提出的时空深度学习模型的预测性能。在本研究中，选择了中国东海的一个分区作为研究区域，覆盖27.5° N–33° N，123.5° E-127.5° E的矩形范围。</p><h3 id="2-2-Data"><a href="#2-2-Data" class="headerlink" title="2.2.Data"></a>2.2.Data</h3><p>使用的数据是美国国家海洋和大气管理局制作的每日最佳插值海面温度。每个网格上，它包含一个长时间序列的日平均SST。通过插值填补空白，使其成为空间上完整的SST数据集。每幅图像的尺寸为22 × 16像素。</p><h2 id="3-Formulation-of-the-SST-field-prediction-problem"><a href="#3-Formulation-of-the-SST-field-prediction-problem" class="headerlink" title="3.Formulation of the SST field prediction problem"></a>3.Formulation of the SST field prediction problem</h2><p>该论文中，SST场的预测是利用过去几天的SST场(固定预测窗口)来预测未来10天的SST场，采用滚动预测的方法。该方法是使用预报窗口中的SST场来预测下一天的SST场，然后，我们将时间窗口往后滚动一天，将新预报的海温场作为其最新元素，以预测未来一天的海温场。通过重复这一过程。</p><h2 id="4-The-spatiotemporal-deep-learning-model-for-SST-field-modelling"><a href="#4-The-spatiotemporal-deep-learning-model-for-SST-field-modelling" class="headerlink" title="4. The spatiotemporal deep learning model for SST field modelling"></a>4. The spatiotemporal deep learning model for SST field modelling</h2><p>and prediction</p><p>我们采用了ConvLSTM作为模型的构建模块。提出ConvLSTM是为了克服全连接LSTM (FCLSTM)在处理时空数据时丢失空间相关性的缺点。与FC-LSTM不同，ConvLSTM通过输入和其周围点的过去状态来确定网格中单元的未来状态，在此期间，空间和时间相关性都被捕获和利用。这是通过用状态到状态和输入到状态转换中的卷积运算代替FC-LSTM中使用的矩阵乘法运算来实现的</p>]]></content>
+    
+    
+    <summary type="html">A spatiotemporal deep learning model for sea surface temperature field_prediction using time-series satellite data</summary>
+    
+    
+    
+    <category term="论文" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87/"/>
+    
+    
+    <category term="ConvLSTM" scheme="http://example.com/tags/ConvLSTM/"/>
+    
+    <category term="时空预测" scheme="http://example.com/tags/%E6%97%B6%E7%A9%BA%E9%A2%84%E6%B5%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>论文1</title>
